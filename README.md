@@ -12,4 +12,3 @@ a database.
 It allows you to generate roles for users on a per controller/object bases.
 I have taken the idea from the Drupal ACL but much simpler method.
 
-
