@@ -13,6 +13,7 @@ class Acl {
 	function __construct() 
 	{
 		$this->_CI = & get_instance();
+		$this->_CI->load->library('session');
 		$this->_CI->load->config('acl', TRUE);
 		$this->acl = $this->_CI->config->item('permission', 'acl');
 	}
@@ -69,6 +70,18 @@ class Acl {
 				}
 				return TRUE;
 			}
+		}
+	}
+	
+	/**
+	 * Function to see if a user is logged in
+	 */
+	public function is_logged_in()
+	{
+		$uid = $this->_CI->session->userdata('uid');
+		if ($uid)
+		{
+			return TRUE;
 		}
 	}
 
