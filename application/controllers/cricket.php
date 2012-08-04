@@ -1,20 +1,19 @@
-<?php
-
-if ( ! defined( 'BASEPATH' ) )
-	exit( 'No direct script access allowed' );
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Cricket extends CI_Controller {
 
-	public function __construct() {
+	public function __construct() 
+	{
 		parent::__construct();
-		$this->load->library( array( 'session', 'acl' ) );
+		$this->load->library( array('session', 'acl'));
 
 		// For this example I'm going to manually add user session data
-		$data = array( 'uid' => 1, 'roles' => array( 'blogger', 'umpire' ) );
-		$this->session->set_userdata( $data );
+		$data = array('uid' => 1, 'roles' => array( 'blogger', 'umpire'));
+		$this->session->set_userdata($data);
 	}
 
-	public function index() {
+	public function index()
+	{
 
 		/*
 		 * The has_permission() accepts 3 params
@@ -39,25 +38,33 @@ class Cricket extends CI_Controller {
 		 * enter 'cricket' or in fact any other controller listed in your acl array.
 		 */
 
-		if ( $this->acl->has_permission( strtolower( __CLASS__ ), 'add' ) ) {
+		if ($this->acl->has_permission(strtolower( __CLASS__), 'add'))
+		{
 			echo '<h1>we have permission</h1>';
-		} else {
+		}
+		else
+		{
 			echo '<h2>No way Hosay!</h2>';
 		}
 	}
 
-	public function listAll() {
+	public function listAll()
+	{
 		/* We only want admin to access this function
 		 * only need to use the first param as the default is for admin only
 		 */
-		if ( $this->acl->has_permission( 'cricket' ) ) {
+		if ($this->acl->has_permission( 'cricket'))
+		{
 			echo '<h1>The admin dude has permission</h1>';
-		} else {
+		}
+		else
+		{
 			echo '<h2>No way Hosay!</h2>';
 		}
 	}
 
-	public function bounceBall() {
+	public function bounceBall()
+	{
 		/* a completely different function but we want bloggers, which is a different
 		 * controller, not umpires to view this function
 		 * so note the different use of the first param
@@ -66,9 +73,12 @@ class Cricket extends CI_Controller {
 		 */
 		$bounce_ball_author = 1;
 
-		if ( $this->acl->has_permission( 'users', array( 'edit own' ), $bounce_ball_author ) ) {
+		if ($this->acl->has_permission( 'users', array('edit own'), $bounce_ball_author))
+		{
 			echo '<h1>The blogger has permission</h1>';
-		} else {
+		}
+		else
+		{
 			echo '<h2>No way Hosay!</h2>';
 		}
 	}
@@ -76,4 +86,4 @@ class Cricket extends CI_Controller {
 }
 
 /* End of file welcome.php */
-	/* Location: ./application/controllers/cricket.php */
+/* Location: ./application/controllers/cricket.php */
