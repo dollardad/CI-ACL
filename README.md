@@ -30,12 +30,14 @@ Read through the config files which I have documented.
 
 ## public functions available ##
 
--- libraries/acl.php \n
+libraries/acl.php
+-----------------
 has_permission($controller, $required_permissions = array(), $author_id = NULL)
 
 is_logged_in()
 
--- libraries/simple_user_login.php \n
+libraries/simple_user_login.php
+-------------------------------
 validate($redirect) // Validate login form. Set login landing page in application/config/login.php
 
 logout($redirect) // Set logout landing page in application/config/login.php
