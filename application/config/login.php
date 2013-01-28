@@ -7,7 +7,7 @@
  * Designed to be uses with CI-ACL
  * https://github.com/dollardad/CI-ACL
  *
- * This is a very simple no database required login system.
+ * This is a very simple ACL no database required login system.
  * The use case for this is small websites with one or two
  * users that require access to update blogs/news etc.
  * It is not designed for fully blown multiple users that can register etc.
