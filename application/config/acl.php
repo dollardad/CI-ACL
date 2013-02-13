@@ -40,7 +40,7 @@ $config['permission'] = array(
 );
 
 /**
- * You can have as many roles as you like, each user or object can have multiple roles
+ * You can have as many roles as you like, each user or object can have multiple roles.
  */
 $config['roles'] = array('user', 'blogger', 'editor', 'umpire', 'admin');
 /* End of applications/config/acl.php */
