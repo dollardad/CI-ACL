@@ -3,6 +3,10 @@ CI-ACL
 
 Simple Codeigniter ACL and Login System
 
+##UPDATE
+
+This has been tested on Codeigniter 3 and works fine.
+
 PHP 5.3 (Should be OK for php 5.2)
 Codeigniter 2.1.2 (Should be OK for any version 2 branch)
 
